@@ -1,8 +1,15 @@
+import random
+
+
 class Pokemon:
 
-    def __init__(self, especie,nivel=1,nome=None):
+    def __init__(self, especie,nivel=None,nome=None):
         self.especie = especie
-        self.nivel = nivel
+        if nivel:
+            self.nivel = nivel
+        else:
+            self.nivel = random.randint(1,100)
+            
         if nome:
             self.nome = nome
         else:
@@ -33,4 +40,3 @@ class PokemonAgua(Pokemon):
 
     def atacar(self, pokemon):
         print(f"{self} lançou um jato d'água em {pokemon}")
-

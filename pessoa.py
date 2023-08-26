@@ -6,6 +6,17 @@ from pokemon import *
 NOMES = ['Jessie','James','Proton','Petrel','Ariana','Archer'
             ,'Pierce','Zager','Namba','Cassidy','Butch','Madame Boss']
 
+POKEMONS = [
+    PokemonFogo('Charmander'),
+    PokemonFogo('Flarion'),
+    PokemonFogo('Vulpix'),
+    PokemonEletrico('Pikachu'),
+    PokemonEletrico('Raichu'),
+    PokemonEletrico('Pichu'),
+    PokemonAgua('Squirtle'),
+    PokemonAgua('Magicarp')
+]
+
 class Pessoa:
     
     def __init__(self, nome=None, pokemons=[]):
@@ -39,3 +50,9 @@ class Jogador(Pessoa):
 class Inimigo(Pessoa):
     tipo = 'inimigo'
 
+    def __init__(self, nome=None, pokemons=[]):
+        if not pokemons:
+            for i in range(random.randint(1, 6)):
+                pokemons.append(random.choice(POKEMONS))
+
+        super().__init__(nome=nome, pokemons=pokemons)
