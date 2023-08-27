@@ -27,8 +27,8 @@ def escolher_pokemon_inicial(jogador):
             break
 
 
-jogador1 = Jogador('Bruno')
+jogador1 = Jogador('Bruno',pokemons=[PokemonAgua('Squirtle',nivel=1)])
 
-escolher_pokemon_inicial(jogador1)
+inimigo = Inimigo(nome='Gary',pokemons=[PokemonFogo('Charmander',nivel=1)])
 
-jogador1.mostrar_pokemons()
+jogador1.batalhar(inimigo)
