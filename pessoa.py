@@ -36,7 +36,7 @@ class Pessoa:
         if self.pokemons:
             print(f'Pokemons de {self}')
             for n,pokemon in enumerate(self.pokemons):
-                print(n,f'- {pokemon}')
+                print(n,f'- {pokemon} - Vida = {pokemon.vida}')
         else:
             print(f'{self} não tem nenhum pokemon')
 
@@ -92,8 +92,11 @@ class Jogador(Pessoa):
                 try:
                     escolha_pokemon = int(input('Pokemon: '))
                     pokemon_escolhido = self.pokemons[escolha_pokemon]
-                    print(f'{pokemon_escolhido.especie} eu escolho você!!!')
-                    return pokemon_escolhido
+                    if pokemon_escolhido.vida <= 0 :
+                        print(f'Pokemon com {pokemon_escolhido.vida} vida, escolha outro pokemon')
+                    else:
+                        print(f'{pokemon_escolhido.especie} eu escolho você!!!')
+                        return pokemon_escolhido
                 except ValueError:
                     print('Escolha inválida, digite o número do pokemon na lista')
                 except IndexError:

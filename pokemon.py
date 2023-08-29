@@ -29,6 +29,7 @@ class Pokemon:
 
         if pokemon.vida <= 0:
             print(f'{pokemon} foi derrotado')
+            pokemon.vida = 0
             return True
         else:
             return False
