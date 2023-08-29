@@ -28,7 +28,7 @@ def escolher_pokemon_inicial(jogador):
 
 
 jogador1 = Jogador('Bruno',pokemons=[PokemonAgua('Squirtle',nivel=1)])
-
+jogador1.mostrar_dinheiro()
 inimigo = Inimigo(nome='Gary',pokemons=[PokemonFogo('Charmander',nivel=1)])
 
 jogador1.batalhar(inimigo)
